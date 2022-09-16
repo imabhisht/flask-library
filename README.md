@@ -1,7 +1,7 @@
 
 # Portfolio
 
-My Portfolio: https://www.imbhisht.com
+My Portfolio: https://www.imabhisht.com
 
 ## References
 
