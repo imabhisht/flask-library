@@ -9,6 +9,15 @@ Based on Scouto (acquired By Spinny) Assignment Questions.
 
 ## API Reference
 
+### Base URL
+##### Project is Hosted on Serverless Enviroment on AWS Lambda
+```https
+  https://ggpv0z2mtk.execute-api.ap-south-1.amazonaws.com/dev
+```
+```https
+  https://ggpv0z2mtk.execute-api.ap-south-1.amazonaws.com/dev/{+Proxy}
+```
+
 #### Get all information about book
 
 ```http
@@ -20,7 +29,7 @@ Based on Scouto (acquired By Spinny) Assignment Questions.
 | `query` | `array` | **Required**. Ex: /book?query=[pepissued, pepcurrent]&bookName=${bookname} |
 |           |       | where pepissued = List of User who Issued book.|
 |           |       | where pepcurrent = List of User who Currently Issue book.    
-|   `bookName`  | `string`      |  Name of the Book     | where pepissued = List of User who Issued book.|
+|   `bookName`  | `string`      |  Name of the Book     |
 
 #### Get all information about person
 
@@ -34,7 +43,7 @@ Based on Scouto (acquired By Spinny) Assignment Questions.
 | `query` | `array` | **Required**. Ex: /person?query=[current, returned, issued]&bookName=${bookname} |
 |           |       | where current = List of Books user currently Issued. |
 |           |       | where returned = List of Books user returned.    
-|   `personName`  | `string`      |  Name of the User     | where pepissued = List of User who Issued book.
+|   `personName`  | `string`      |  Name of the User     | 
 
 #### Get Books Information & Search Features
 
@@ -54,7 +63,7 @@ Based on Scouto (acquired By Spinny) Assignment Questions.
 #### Get Books Issue for User
 
 ```http
-  GET /book/issue?bookName=india&personName=rahul
+  POST /book/issue?bookName=india&personName=rahul
 ```
 
 | Parameter | Type     | Description                       |
@@ -66,7 +75,7 @@ Based on Scouto (acquired By Spinny) Assignment Questions.
 #### Get Books Returned for User
 
 ```http
-  GET /book/return?bookName=india&personName=rahul
+  POST /book/return?bookName=india&personName=rahul
 ```
 
 | Parameter | Type     | Description                       |
@@ -75,5 +84,25 @@ Based on Scouto (acquired By Spinny) Assignment Questions.
 | ` personName`      | `string` |  Name of the Person |
 
 
+
+  
+## Deployment
+
+Project Running on AWS Lambda with CI/CD Enabled ☑
+
+```bash
+  sls deploy
+```
+
+
+To deploy this project locally run
+
+```bash
+  pip install -r requirements.txt
+```
+
+```bash
+  python3 app.py
+```
 
   
